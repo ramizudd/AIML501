@@ -1,227 +1,194 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ramiz Uddin — AI & Data Analytics (STEM)</title>
-<meta name="description" content="Research portfolio of Ramiz Uddin — M.S. AI & Data Analytics (STEM). Neural networks, embeddings, data systems, and applied ML for compliance."/>
+<meta charset="utf-8">
+<title>Ramiz Uddin — Engineer, Research-minded Builder</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ramiz Uddin — Lead full-stack engineer & M.S. AI/Data Analytics (STEM). Neural networks, embeddings, compliance data systems, platform reliability.">
 <style>
-/* ====== Research/PhD vibe: restrained, legible, print-friendly ====== */
 :root{
-  --bg:#fbfbfd; --ink:#111; --muted:#5a606a; --rule:#e7e9ee; --accent:#0d47a1;
-  --code:#2b2f36; --hilite:#f3f6ff; --card:#fff; --shadow:0 2px 18px rgba(0,0,0,.05);
-  --serif: 'Iowan Old Style','Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
-  --mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-  --sans: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --radius: 14px;
+  --bg:#fbfbfb; --ink:#171717; --muted:#60646c; --rule:#e9eaec; --accent:#0b57d0;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --serif: "Iowan Old Style","Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --max: 860px;
 }
 @media (prefers-color-scheme: dark){
-  :root{ --bg:#0b0d11; --ink:#ebeff4; --muted:#9aa4b2; --rule:#1b2028; --accent:#7bb0ff; --card:#12151b; --shadow:none; --hilite:#0f1726;}
+  :root{ --bg:#0c0f12; --ink:#e9edf2; --muted:#9aa4b2; --rule:#18202a; --accent:#7bb0ff; }
 }
 *{box-sizing:border-box}
 html,body{margin:0; background:var(--bg); color:var(--ink)}
 a{color:var(--accent); text-decoration:none}
 a:hover{text-decoration:underline}
-hr{border:0; height:1px; background:var(--rule); margin:24px 0}
+hr{border:0; height:1px; background:var(--rule); margin:48px 0}
+.wrap{max-width:var(--max); margin:0 auto; padding:32px 22px 80px}
+header{margin:6px 0 28px}
+.kicker{letter-spacing:.12em; text-transform:uppercase; font:600 12px/1 var(--sans); color:var(--muted)}
+h1{font:700 clamp(28px,4.6vw,48px)/1.08 var(--serif); margin:.2rem 0 1rem}
+.lede{font:400 20px/1.55 var(--serif); color:var(--muted); max-width:70ch}
+.meta{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+.meta .pill{font:12px/1 var(--mono); color:var(--muted); border:1px solid var(--rule); padding:6px 10px; border-radius:999px}
 
-/* Layout */
-.wrapper{display:grid; grid-template-columns: 280px 1fr; gap:28px; max-width:1200px; margin:0 auto; padding:28px}
-@media (max-width: 900px){ .wrapper{grid-template-columns: 1fr} }
+section{margin:44px 0}
+h2{font:700 18px/1.2 var(--sans); letter-spacing:.06em; text-transform:uppercase; margin:0 0 12px}
+h3{font:600 20px/1.25 var(--serif); margin:18px 0 6px}
+p, li{font:17px/1.7 var(--serif); margin:0 0 12px}
+.small{font-size:14px; color:var(--muted)}
+blockquote{margin:18px 0; padding:0 18px; border-left:3px solid var(--rule); color:var(--muted)}
+ul.clean{list-style:none; padding-left:0}
+ul.clean li{margin:10px 0}
+.rule{height:1px; background:var(--rule); margin:18px 0 14px}
+.grid{display:grid; gap:14px}
+@media (min-width:880px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
+.badges .tag{display:inline-block; border:1px solid var(--rule); padding:4px 8px; border-radius:999px; font:12px var(--mono); color:var(--muted); margin:4px 8px 0 0}
 
-/* Left rail */
-.aside{
-  position:sticky; top:20px; align-self:start; background:var(--card); border:1px solid var(--rule);
-  border-radius:var(--radius); padding:20px; box-shadow:var(--shadow);
-}
-.name{font-family:var(--serif); font-size:28px; line-height:1.1; margin:0 0 6px}
-.role{color:var(--muted); margin:0 0 12px}
-.aside .id{font: 14px/1.5 var(--mono); color:var(--muted); background:var(--hilite); padding:6px 8px; border-radius:8px; display:inline-block}
-.nav{margin:16px 0 8px; padding:0; list-style:none}
-.nav li{margin:6px 0}
-.nav a{display:block; padding:8px 10px; border-radius:8px}
-.nav a:hover{background:var(--hilite); text-decoration:none}
-.badges{margin-top:12px}
-.badges a{margin-right:8px; font:13px/1 var(--mono); border:1px solid var(--rule); padding:6px 8px; border-radius:999px; color:var(--muted)}
-.badges a:hover{background:var(--hilite)}
-
-/* Main column */
-.main{display:grid; gap:22px}
-.section{background:var(--card); border:1px solid var(--rule); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
-h2{font: 600 20px/1.2 var(--sans); letter-spacing:.2px; margin:0 0 12px}
-h3{font: 600 18px/1.2 var(--sans); margin:16px 0 6px}
-p, li{font: 16px/1.55 var(--serif); margin:0 0 10px}
-.small{color:var(--muted); font-size:14px}
-.code{font: 13px/1.5 var(--mono); color:var(--ink); background:var(--hilite); border:1px solid var(--rule); padding:10px 12px; border-radius:10px; overflow:auto}
-
-/* Cards / paper list */
-.cards{display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:16px}
-@media (max-width: 1100px){ .cards{grid-template-columns: 1fr} }
-.card{
-  border:1px solid var(--rule); background:var(--card); border-radius:12px; padding:16px;
-}
-.card h4{margin:0 0 6px; font:600 16px/1.3 var(--sans)}
-.meta{color:var(--muted); font-size:14px; margin:0 0 10px}
-.tags .tag{display:inline-block; border:1px solid var(--rule); padding:4px 8px; border-radius:999px; font: 12px var(--mono); color:var(--muted); margin:4px 6px 0 0}
-.actions a{margin-right:10px; font: 14px/1 var(--sans)}
-
-/* Iframe frame */
-.frame{position:relative; padding-top:56.25%; border:1px solid var(--rule); border-radius:12px; overflow:hidden; background:#0002}
+.figure{margin:10px 0; border:1px solid var(--rule); border-radius:10px; overflow:hidden; background:#0002}
+.frame{position:relative; padding-top:56.25%}
 .frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+.figcap{font:13px/1.5 var(--sans); color:var(--muted); padding:8px 10px}
 
-/* Definition list (about) */
-.def{display:grid; grid-template-columns: 160px 1fr; gap:10px 14px}
-@media (max-width: 620px){ .def{grid-template-columns: 1fr} .def dt{margin-top:6px}}
-.def dt{font:600 14px var(--sans); color:var(--muted)}
-.def dd{margin:0}
-
-/* Print */
-@media print{
-  .wrapper{display:block; padding:0}
-  .aside{position:static; box-shadow:none}
-  .section, .aside{break-inside:avoid}
-  a{color:#000; text-decoration:underline}
-}
+.footer{margin-top:56px; color:var(--muted); font:14px/1.5 var(--sans)}
+.btn{display:inline-block; border:1px solid var(--rule); padding:10px 14px; border-radius:10px; font:14px var(--sans); margin-right:8px}
+.btn:hover{background:rgba(0,0,0,.03)}
+kbd{font:12px var(--mono); background:rgba(127,127,127,.12); padding:2px 6px; border-radius:6px}
 </style>
 </head>
 <body>
-<div class="wrapper">
+<div class="wrap">
 
-  <!-- LEFT RAIL -->
-  <aside class="aside">
-    <h1 class="name">Ramiz Uddin</h1>
-    <p class="role">M.S. AI & Data Analytics (STEM), Indiana Wesleyan University</p>
-    <div class="id">Student ID: 2913921</div>
-
-    <ul class="nav" aria-label="Sections">
-      <li><a href="#about">About</a></li>
-      <li><a href="#artifacts">Portfolio Artifacts (1.5 & 2.4)</a></li>
-      <li><a href="#work">Selected Work / Projects</a></li>
-      <li><a href="#pubs">Writing & Publications</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <div class="badges">
-      <a href="https://linkedin.com/in/ramizuddin" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/ramizudd" target="_blank" rel="noopener">GitHub</a>
+  <!-- Header -->
+  <header>
+    <div class="kicker">Ramiz Uddin · Atlanta → Austin (remote)</div>
+    <h1>Engineering leader, research-minded builder, and M.S. candidate in AI & Data Analytics (STEM).</h1>
+    <p class="lede">
+      I design reliable data/ML systems for real-world constraints—regulatory reporting, learning platforms, and platform reliability at scale.
+      My background spans <strong>Java 17 + Spring (WebFlux/R2DBC/Kafka)</strong>, <strong>React/TypeScript</strong>, and cloud operations on <strong>AWS EKS</strong>.
+      I’m currently deepening my work on <em>neural networks, embeddings, and model evaluation</em>, with a bias for clear communication and pragmatic delivery.
+    </p>
+    <div class="meta">
+      <span class="pill">Student ID: 2913921</span>
+      <a class="pill" href="https://linkedin.com/in/ramizuddin" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="pill" href="mailto:ramiz.udd1n@outlook.com">ramiz.udd1n@outlook.com</a>
+      <span class="pill">📞 (512) 765-5402</span>
+      <a class="pill" href="https://1drv.ms/w/c/70bcd8321bdbf420/ESD02xsy2LwggHC3VQQAAAABd09FHgnnunXCQeHaS-gXKQ?e=gsQQeh" target="_blank" rel="noopener">CV (OneDrive)</a>
     </div>
-  </aside>
+  </header>
 
-  <!-- MAIN -->
-  <main class="main">
+  <!-- Now / Ambition -->
+  <section>
+    <h2>Now & Next</h2>
+    <h3>What I’m building toward</h3>
+    <ul class="clean">
+      <li>• <strong>Research-grade clarity</strong> in how we present and defend ML systems—diagrams, loss/metric storytelling, and decision records leaders can trust.</li>
+      <li>• <strong>Production discipline</strong>: reproducible pipelines, observability, audit trails, and graceful rollouts (canary, blue/green, SLOs).</li>
+      <li>• <strong>Compliance automation</strong>: state integrations, data contracts, and human-in-the-loop review that stands up to audits.</li>
+    </ul>
+    <div class="badges">
+      <span class="tag">Neural nets</span><span class="tag">Embeddings</span><span class="tag">Evaluation</span>
+      <span class="tag">Data governance</span><span class="tag">Observability</span><span class="tag">AWS EKS</span>
+    </div>
+  </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <h2>Professional · Academic · Interests</h2>
-      <dl class="def">
-        <dt>Professional</dt>
-        <dd>Software engineering leader with ~2 decades in platform reliability and regulatory data workflows. I build systems that are observable, auditable, and easy to reason about—bringing ML where it measurably improves throughput or decision quality.</dd>
+  <hr>
 
-        <dt>Academic</dt>
-        <dd>M.S. in AI & Data Analytics (STEM), IWU. Focus: neural networks, embeddings, data governance, and practical evaluation (loss surfaces, calibration, error analysis).</dd>
+  <!-- Portfolio artifacts -->
+  <section id="artifacts">
+    <h2>Portfolio (AIML-501)</h2>
 
-        <dt>Interests</dt>
-        <dd>Model interpretability & evaluation, embeddings search, data pipelines, privacy-aware reporting, and ML ergonomics (clear interfaces, strong defaults, reproducibility).</dd>
-      </dl>
-      <hr/>
-      <p class="small">This page curates my course artifacts and selected work with a research-leaning presentation (BibTeX, notes, print-friendly). Source: GitHub Pages.</p>
-    </section>
-
-    <!-- ARTIFACTS -->
-    <section id="artifacts" class="section">
-      <h2>Portfolio Artifacts (AIML-501)</h2>
-
-      <div class="cards">
-        <article class="card">
-          <h4>Artifact 1.5 — Explanation & Reflection</h4>
-          <p class="meta">Workshop 1 · Communicating complex ML concepts clearly.</p>
-          <p>Foundational artifact highlighting my approach to visual clarity, succinct narration, and reflective practice.</p>
-            <div class="frame" role="region" aria-label="Embedded slides">
-              <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQIJz7DqCZOCisat4KbGI81_2O7p_JTjT2A2Ylj7eBh9lJ-8ikRxeXR3lTmycdHol28CkUUSTFnIXCV/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-            </div>
-          <p class="small"><a href="https://docs.google.com/presentation/d/e/2PACX-1vQIJz7DqCZOCisat4KbGI81_2O7p_JTjT2A2Ylj7eBh9lJ-8ikRxeXR3lTmycdHol28CkUUSTFnIXCV/pub?start=true&loop=true&delayms=3000" target="_blank" rel="noopener">Open slides in new tab</a></p>
-        </article>
-
-        <article class="card">
-          <h4>Artifact 2.4 — Visualizing Neural Networks</h4>
-          <p class="meta">Workshop 2 · Layers, neurons, weights, activations, loss, optimization — and their relationships.</p>
-          <div class="frame" role="region" aria-label="Embedded slides">
-            <!-- Replace with your own published Google Slides 'pub' link -->
-            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRg-MqEkzVoGWAqEUr-CZ1S_Vs6PY0YmBJfsJmnf6lBsz4GmZEkppQSKTALbgyNyz2ZswpcBYSwb5Sj/pubembed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    <div class="grid cols-2">
+      <div>
+        <h3>1.5 — Explanation & Reflection</h3>
+        <div class="rule"></div>
+        <p>Foundational artifact on communicating ML simply and precisely for non-experts. It set the tone for my portfolio: fewer buzzwords, better drawings, measurable claims.</p>
+        <div class="figure">
+          <div class="frame">
+            <iframe loading="lazy" allowfullscreen
+              src="https://docs.google.com/presentation/d/e/2PACX-1vQIJz7DqCZOCisat4KbGI81_2O7p_JTjT2A2Ylj7eBh9lJ-8ikRxeXR3lTmycdHol28CkUUSTFnIXCV/pub?start=false&loop=false&delayms=3000"></iframe>
           </div>
-          <p class="small"><a href="https://docs.google.com/presentation/d/e/2PACX-1vRg-MqEkzVoGWAqEUr-CZ1S_Vs6PY0YmBJfsJmnf6lBsz4GmZEkppQSKTALbgyNyz2ZswpcBYSwb5Sj/pub?start=true&loop=true&delayms=3000" target="_blank" rel="noopener">Open slides in new tab</a></p>
-          <div class="tags"><span class="tag">neural networks</span><span class="tag">relationships</span><span class="tag">evaluation</span></div>
-        </article>
+          <div class="figcap">If the embed is blocked, <a href="https://docs.google.com/presentation/d/e/2PACX-1vQIJz7DqCZOCisat4KbGI81_2O7p_JTjT2A2Ylj7eBh9lJ-8ikRxeXR3lTmycdHol28CkUUSTFnIXCV/pub?start=false&loop=false&delayms=3000" target="_blank" rel="noopener">open in a new tab</a>.</div>
+        </div>
       </div>
 
-      <h3 style="margin-top:14px">Summary / Key Insights</h3>
-      <ul>
-        <li>Forward pass = structure (layers/neurons/weights) + non-linearity (activations); learning loop = loss-driven optimization via gradients.</li>
-        <li>Choice of activation and optimizer materially affects convergence and generalization; monitoring validation curves prevents overfitting.</li>
-        <li>Clear visuals and concise prose are essential for cross-functional stakeholders evaluating ML proposals.</li>
-      </ul>
-    </section>
-
-    <!-- WORK -->
-    <section id="work" class="section">
-      <h2>Selected Work / Projects</h2>
-      <div class="cards">
-        <article class="card">
-          <h4>Regulatory Reporting Automation</h4>
-          <p class="meta">ETL, validation rules, and scheduled submissions with audit trails.</p>
-          <p>Replaced manual email flows with observable pipelines and dashboards; reduced latency and error rates while improving compliance proofs.</p>
-          <div class="tags"><span class="tag">SQL/DB2</span><span class="tag">Python</span><span class="tag">Power Automate</span></div>
-        </article>
-        <article class="card">
-          <h4>Embeddings Explorer</h4>
-          <p class="meta">Nearest neighbors and cluster patterns with TensorFlow Projector.</p>
-          <p>Studied semantic neighborhoods and decision boundaries; documented qualitative evaluation patterns for stakeholders.</p>
-          <div class="tags"><span class="tag">NLP</span><span class="tag">TensorFlow</span><span class="tag">Visualization</span></div>
-        </article>
+      <div>
+        <h3>2.4 — Visualizing Neural Networks</h3>
+        <div class="rule"></div>
+        <p>Layers, neurons, weights, activations, loss, and optimization—shown as a system. The slides include a relationships map (forward pass vs. backprop) and short takeaways.</p>
+        <div class="figure">
+          <div class="frame">
+            <iframe loading="lazy" allowfullscreen
+              src="https://docs.google.com/presentation/d/e/2PACX-1vRg-MqEkzVoGWAqEUr-CZ1S_Vs6PY0YmBJfsJmnf6lBsz4GmZEkppQSKTALbgyNyz2ZswpcBYSwb5Sj/pub?start=false&loop=false&delayms=3000"></iframe>
+          </div>
+          <div class="figcap">If the embed is blocked, <a href="https://docs.google.com/presentation/d/e/2PACX-1vRg-MqEkzVoGWAqEUr-CZ1S_Vs6PY0YmBJfsJmnf6lBsz4GmZEkppQSKTALbgyNyz2ZswpcBYSwb5Sj/pub?start=false&loop=false&delayms=3000" target="_blank" rel="noopener">open in a new tab</a>.</div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- WRITING / PUBLICATIONS -->
-    <section id="pubs" class="section">
-      <h2>Writing & Publications</h2>
+  <!-- Selected Work -->
+  <section id="work">
+    <h2>Selected Work</h2>
+    <h3>Regulatory Reporting Automation</h3>
+    <div class="rule"></div>
+    <p>Moved manual state reporting to observable pipelines with validation and scheduling. Benefited accuracy, latency, and auditability; enabled policy-driven retries and business-visible SLAs.</p>
+    <p class="small">Stack: SQL/DB2 · Python · Power Automate · Dashboards · Data quality rules</p>
 
-      <article class="card">
-        <h4>Communicating Neural Networks for Learning & Leadership</h4>
-        <p class="meta">Course essay · 2025</p>
-        <p>Guidelines for presenting model internals to non-technical leaders using layered visuals and concrete error analysis.</p>
-        <details>
-          <summary class="small">BibTeX</summary>
-          <pre class="code">@misc{uddin2025communicatingNN,
-  author  = {Ramiz Uddin},
-  title   = {Communicating Neural Networks for Learning and Leadership},
-  year    = {2025},
-  note    = {Course essay, AIML-501}
+    <h3>From Monolith to Reactive Microservices</h3>
+    <div class="rule"></div>
+    <p>Designed Spring Boot + WebFlux services with Kafka eventing and canary rollout on EKS. <em>Result:</em> faster cycles, 10× scalability, and safer deployments with metrics-led decisions.</p>
+    <p class="small">Stack: Java 17 · Spring WebFlux/R2DBC · Kafka · AWS EKS · Helm · GitLab CI/CD · Prometheus/Grafana</p>
+
+    <h3>Embeddings Explorer</h3>
+    <div class="rule"></div>
+    <p>Hands-on explorations using TensorFlow Projector—nearest neighbors, local clusters, and qualitative evaluation to support stakeholders’ decisions about search and tagging.</p>
+  </section>
+
+  <!-- Writing -->
+  <section id="writing">
+    <h2>Writing</h2>
+    <h3>Communicating Neural Networks for Learning & Leadership (2025)</h3>
+    <div class="rule"></div>
+    <p>Notes on diagramming, guarding against “hand-wavy” metrics, and making failure modes visible to non-engineers.</p>
+    <details class="small"><summary>BibTeX</summary>
+      <pre class="small" style="font-family:ui-monospace,Menlo,Consolas,monospace; white-space:pre-wrap; background:rgba(127,127,127,.08); padding:10px 12px; border-radius:8px; border:1px solid var(--rule);">
+@misc{uddin2025_communicatingNN,
+  author = {Ramiz Uddin},
+  title  = {Communicating Neural Networks for Learning & Leadership},
+  year   = {2025},
+  note   = {Course essay, AIML-501}
 }</pre>
-        </details>
-      </article>
+    </details>
+  </section>
 
-      <!-- Add more entries as needed -->
-    </section>
+  <!-- Profile / Snapshot -->
+  <section id="profile">
+    <h2>Snapshot</h2>
+    <div class="grid cols-2">
+      <div>
+        <h3>Professional</h3>
+        <div class="rule"></div>
+        <p>Lead Full-Stack Engineer (360Training). Two decades designing and steering platforms across Austin, Karachi, Manila, and Warsaw. I favor boring, dependable tools, strong docs, and small interfaces with big leverage.</p>
+        <p>Recent focus: canary deployments, evented backends, and the unglamorous glue that keeps data right—validation, lineage, and recovery plans.</p>
+      </div>
+      <div>
+        <h3>Academic</h3>
+        <div class="rule"></div>
+        <p>Indiana Wesleyan University — M.S. AI & Data Analytics (STEM), expected 2026. Coursework in NN fundamentals, data typologies/governance, and model evaluation.</p>
+        <p class="small">Interests: embeddings search; loss landscapes & convergence; evaluation beyond accuracy—calibration, stability, and failure analysis.</p>
+      </div>
+    </div>
+    <p class="small">Full resume: <a href="https://1drv.ms/w/c/70bcd8321bdbf420/ESD02xsy2LwggHC3VQQAAAABd09FHgnnunXCQeHaS-gXKQ?e=gsQQeh" target="_blank" rel="noopener">download PDF</a>. LinkedIn: <a href="https://linkedin.com/in/ramizuddin" target="_blank" rel="noopener">/in/ramizuddin</a>.</p>
+  </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="section">
-      <h2>Skills</h2>
-      <ul>
-        <li>Neural networks, embeddings, model evaluation, calibration</li>
-        <li>Data modeling, SQL/DB2, ETL, warehouse/reporting pipelines</li>
-        <li>Python (NumPy, Pandas, TF/Keras), visualization, dashboards</li>
-        <li>Cloud (AWS/Azure), CI/CD, observability, governance & ethics</li>
-      </ul>
-    </section>
+  <hr>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:r.ud@outlook.com">r.ud@outlook.com</a> · LinkedIn: <a target="_blank" rel="noopener" href="https://linkedin.com/in/ramizuddin">/in/ramizuddin</a> · GitHub: <a target="_blank" rel="noopener" href="https://github.com/ramizudd">@ramizudd</a></p>
-      <p class="small">Last updated <script>document.write(new Date().toISOString().slice(0,10))</script>.</p>
-    </section>
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email <a href="mailto:ramiz.udd1n@outlook.com">ramiz.udd1n@outlook.com</a> · LinkedIn <a href="https://linkedin.com/in/ramizuddin" target="_blank" rel="noopener">/in/ramizuddin</a> · GitHub <a href="https://github.com/ramizudd" target="_blank" rel="noopener">@ramizudd</a></p>
+    <p class="footer">© <span id="y"></span> Ramiz Uddin. Built for my IWU AI & Data Analytics portfolio. This site keeps JavaScript minimal by design—only a year stamp.</p>
+  </section>
 
-  </main>
 </div>
+<script>document.getElementById('y').textContent = new Date().getFullYear()</script>
 </body>
 </html>
