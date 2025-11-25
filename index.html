@@ -149,55 +149,56 @@
       
     </section>
 
-    <section id="artifact-4-4" class="stack">
-        <h2>4.4 • Explainability (XAI) for LLMs</h2>
-        <p class="lede">
-          Why do LLMs answer the way they do? This artifact maps the end-to-end path from model output → human explanation,
-          summarizing core challenges, today’s practical techniques, and how validation & metrics increase trust.
-        </p>
-      
-        <div class="grid three">
-          <article>
-            <h3>Challenges</h3>
-            <ul>
-              <li><strong>Opacity & scale:</strong> Behavior emerges from billions of parameters (no single “reason”).</li>
-              <li><strong>Post-hoc fragility:</strong> Explanations can be plausible but not faithful to internals.</li>
-              <li><strong>Data bias:</strong> Imperfect training data → biased or brittle outputs.</li>
-            </ul>
-          </article>
-          <article>
-            <h3>Techniques in practice</h3>
-            <ul>
-              <li><strong>Feature/attribution views:</strong> attention maps, saliency, probes.</li>
-              <li><strong>Explanatory scaffolds:</strong> rationale prompts, few-shot exemplars, tool-use traces.</li>
-              <li><strong>Surrogate models:</strong> local linear/Tree explainer for small neighborhoods.</li>
-            </ul>
-          </article>
-          <article>
-            <h3>Validation & metrics</h3>
-            <ul>
-              <li><strong>Reliability:</strong> holdouts, stress tests, edge-case suites.</li>
-              <li><strong>Safety gates:</strong> refusal/guardrails evaluation; red-team sets.</li>
-              <li><strong>Quality:</strong> calibration, agreement rates, human-loop review.</li>
-            </ul>
-          </article>
-        </div>
-      
-        <!-- Embed your visual/slide here -->
-        <figure class="wide">
-          <iframe src="XAI_Portfolio_Artifact.svg"
-                  title="XAI Artifact — Ramiz Uddin"
-                  loading="lazy" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-          <figcaption>
-            Visual summary: Output → Explanation pipeline and where validation & metrics improve trust.
-          </figcaption>
-        </figure>
-      
-        <div class="downloads">
-          <a href="XAI_Portfolio_Artifact.svg" download>Download</a>
-        </div>
-      </section>
-    
+    <div class="card">
+      <section id="artifact-4-4" class="stack">
+          <h2>4.4 • Explainability (XAI) for LLMs</h2>
+          <p class="lede">
+            Why do LLMs answer the way they do? This artifact maps the end-to-end path from model output → human explanation,
+            summarizing core challenges, today’s practical techniques, and how validation & metrics increase trust.
+          </p>
+        
+          <div class="grid three">
+            <article>
+              <h3>Challenges</h3>
+              <ul>
+                <li><strong>Opacity & scale:</strong> Behavior emerges from billions of parameters (no single “reason”).</li>
+                <li><strong>Post-hoc fragility:</strong> Explanations can be plausible but not faithful to internals.</li>
+                <li><strong>Data bias:</strong> Imperfect training data → biased or brittle outputs.</li>
+              </ul>
+            </article>
+            <article>
+              <h3>Techniques in practice</h3>
+              <ul>
+                <li><strong>Feature/attribution views:</strong> attention maps, saliency, probes.</li>
+                <li><strong>Explanatory scaffolds:</strong> rationale prompts, few-shot exemplars, tool-use traces.</li>
+                <li><strong>Surrogate models:</strong> local linear/Tree explainer for small neighborhoods.</li>
+              </ul>
+            </article>
+            <article>
+              <h3>Validation & metrics</h3>
+              <ul>
+                <li><strong>Reliability:</strong> holdouts, stress tests, edge-case suites.</li>
+                <li><strong>Safety gates:</strong> refusal/guardrails evaluation; red-team sets.</li>
+                <li><strong>Quality:</strong> calibration, agreement rates, human-loop review.</li>
+              </ul>
+            </article>
+          </div>
+        
+          <!-- Embed your visual/slide here -->
+          <figure class="wide">
+            <iframe src="XAI_Portfolio_Artifact.svg"
+                    title="XAI Artifact — Ramiz Uddin"
+                    loading="lazy" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            <figcaption>
+              Visual summary: Output → Explanation pipeline and where validation & metrics improve trust.
+            </figcaption>
+          </figure>
+        
+          <div class="downloads">
+            <a href="XAI_Portfolio_Artifact.svg" download>Download</a>
+          </div>
+        </section>
+    </div>
     <!-- Projects -->
     <section id="projects" class="grid cols-3" style="margin-top:20px">
       <div class="card">
