@@ -63,6 +63,13 @@
     .row{display:flex; gap:12px; flex-wrap:wrap}
     .stack > * + *{margin-top:10px}
     .small{font-size:14px}
+
+    .stack{max-width:980px;margin:0 auto;padding:2rem 1rem}
+    .lede{font-size:1.1rem;line-height:1.6}
+    .grid.three{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:1rem 0}
+    figure.wide{margin:1.5rem 0}
+    figcaption{font-size:.92rem;opacity:.8;margin-top:.5rem}
+    .downloads a{margin-right:1rem}
   </style>
 </head>
 <body>
@@ -137,6 +144,55 @@
         <div class="frame" role="region" aria-label="Embedded slides">
           <!-- Replace with your own published Google Slides 'pub' link -->
           <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQkYYMdyVUK4uAdxYv9RXpMPOiU2j4e-qCR2mKdFoQaokWT9ZFMPRUtURWQ-tb-A7vN531jxsnE_ta_/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>4.4 • Explainability (XAI) for LLMs</h2>
+        <p class="lede">
+          Why do LLMs answer the way they do? This artifact maps the end-to-end path from model output → human explanation,
+          summarizing core challenges, today’s practical techniques, and how validation & metrics increase trust.
+        </p>
+      
+        <div class="grid three">
+          <article>
+            <h3>Challenges</h3>
+            <ul>
+              <li><strong>Opacity & scale:</strong> Behavior emerges from billions of parameters (no single “reason”).</li>
+              <li><strong>Post-hoc fragility:</strong> Explanations can be plausible but not faithful to internals.</li>
+              <li><strong>Data bias:</strong> Imperfect training data → biased or brittle outputs.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Techniques in practice</h3>
+            <ul>
+              <li><strong>Feature/attribution views:</strong> attention maps, saliency, probes.</li>
+              <li><strong>Explanatory scaffolds:</strong> rationale prompts, few-shot exemplars, tool-use traces.</li>
+              <li><strong>Surrogate models:</strong> local linear/Tree explainer for small neighborhoods.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Validation & metrics</h3>
+            <ul>
+              <li><strong>Reliability:</strong> holdouts, stress tests, edge-case suites.</li>
+              <li><strong>Safety gates:</strong> refusal/guardrails evaluation; red-team sets.</li>
+              <li><strong>Quality:</strong> calibration, agreement rates, human-loop review.</li>
+            </ul>
+          </article>
+        </div>
+      
+        <!-- Embed your visual/slide here -->
+        <figure class="wide">
+          <iframe src="XAI_Portfolio_Artifact.svg"
+                  title="XAI Artifact — Ramiz Uddin"
+                  loading="lazy" width="960" height="569" allowfullscreen></iframe>
+          <figcaption>
+            Visual summary: Output → Explanation pipeline and where validation & metrics improve trust.
+          </figcaption>
+        </figure>
+      
+        <div class="downloads">
+          <a href="XAI_Portfolio_Artifact.svg" download>Download</a>
         </div>
       </div>
       
